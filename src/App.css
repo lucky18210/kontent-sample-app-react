@@ -1,6 +1,3 @@
-body {
-    background: #f8f8f8
-}
 
 .container {
     max-width: 500px;
@@ -27,11 +24,57 @@ fieldset:last-child {
     margin-bottom: 0
 }
 
-label {
+.text-input {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* label {
     display: block;
     font-size: 1.2rem;
     color: #4b5563
+} */
+
+.text-input label {
+    position: absolute;
+    top: 14%;
+    left: 0.5rem;
+    padding: 0 0.5rem;
+    pointer-events: none;
+    transition: 150ms ease;
+    color: #888;
 }
+
+.text-input label.label-focus {
+    position: absolute;
+    top: 0;
+    font-size: 0.9em;
+    color: #e14;
+    font-weight: bold;
+    transform: translateY(-50%);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+/* .text-input input:focus + label {
+    transform: translateY(-1.3rem);
+    background-color: #fff;
+    font-size: 0.9rem;
+    padding: 0 0.3rem;
+    color: #f00;
+} */
+
+.text-input input:focus {
+    outline: none;
+}
+
+/* .text-input input[data-touched="true"] + label {
+    transform: translateY(-1.3rem);
+    background-color: #fff;
+    font-size: 0.9rem;
+    padding: 0 0.3rem;
+    color: #f00;
+} */
 
 [multiple],
 [type=date],
@@ -50,7 +93,6 @@ select,
 textarea {
     display: block;
     width: 100%;
-    margin-top: 1rem;
     appearance: none;
     background-color: #fff;
     border-color: #6b7280;
