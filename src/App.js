@@ -28,7 +28,13 @@ function useTouchedFields() {
 const ContactForm = () => {
   const [bindField, setAllFieldsTouched] = useTouchedFields()
   
-  const[add, remove] = useState();
+  const handleFocus = e => {
+    e.target.classList.add("label-focus");
+  };
+
+  const handleBlur = e => {
+    e.target.classList.remove("label-focus");
+  };
 
   return (
     <div className='container'>
@@ -45,13 +51,13 @@ const ContactForm = () => {
             id="name" 
             name="name" 
             type="text"
-            onFocus={() => remove(true)}
-            onBlur={() => remove(false)}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             // data-touched={touchedFields.message}
             {...bindField("name")}
             required
             />
-            <label htmlFor="name" className={add ? "label-focus" : ""}>Name *</label>
+            <label htmlFor="name">Name *</label>
           <div className="form-required-message">A name is required.</div>
         </fieldset>
         <fieldset className="text-input">
