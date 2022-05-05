@@ -29,11 +29,11 @@ const ContactForm = () => {
   const [bindField, setAllFieldsTouched] = useTouchedFields()
   
   const handleFocus = e => {
-    e.target.classList.add("label-focus");
+    e.target.classList.add("inputFocus");
   };
 
   const handleBlur = e => {
-    e.target.classList.remove("label-focus");
+    e.target.classList.remove("inputFocus");
   };
 
   return (
@@ -53,7 +53,6 @@ const ContactForm = () => {
             type="text"
             onFocus={handleFocus}
             onBlur={handleBlur}
-            // data-touched={touchedFields.message}
             {...bindField("name")}
             required
             />
@@ -65,6 +64,8 @@ const ContactForm = () => {
             id="email" 
             name="email" 
             type="email" 
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             {...bindField("email")}
             required  
           />
@@ -76,6 +77,8 @@ const ContactForm = () => {
             id="password" 
             name="password" 
             type="password" 
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             {...bindField("password")}
             required  
           />
@@ -86,7 +89,9 @@ const ContactForm = () => {
           <input 
             id="tel" 
             name="tel" 
-            type="tel"               
+            type="tel"          
+            onFocus={handleFocus}
+            onBlur={handleBlur}     
             {...bindField("tel")}
             required 
           />
