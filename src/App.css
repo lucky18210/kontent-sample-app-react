@@ -35,7 +35,7 @@ fieldset:last-child {
     color: #4b5563
 } */
 
-.text-input input + label {
+.text-input label {
     position: absolute;
     top: 14%;
     left: 0.5rem;
@@ -45,15 +45,14 @@ fieldset:last-child {
     color: #888;
 }
 
-.text-input input.inputFocus + label {
+.text-input input + label {
     position: absolute;
-    top: 0;
-    font-size: 0.9em;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    transform: translateY(-50%);
-    background-color: #fff;
-    font-weight: 600;
+    top: 14%;
+    left: 0.5rem;
+    padding: 0 0.5rem;
+    pointer-events: none;
+    transition: 150ms ease;
+    color: #888;
 }
 
 /* .text-input input:focus + label {
@@ -68,13 +67,25 @@ fieldset:last-child {
     outline: none;
 }
 
-/* .text-input input[data-touched="true"] + label {
+/* .text-input input:valid + label {
     transform: translateY(-1.3rem);
     background-color: #fff;
     font-size: 0.9rem;
     padding: 0 0.3rem;
     color: #f00;
 } */
+
+.text-input input.inputFocus + label {
+    position: absolute;
+    top: 0;
+    font-size: 0.9em;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transform: translateY(-50%);
+    background-color: #fff;
+    font-weight: 600;
+}
+
 
 [multiple],
 [type=date],

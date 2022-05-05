@@ -19,7 +19,7 @@ function useTouchedFields() {
   
   const bindField = (fieldName) => ({
     "data-touched": touchedFields.all || touchedFields[fieldName],
-    onBlur: setFieldTouched,   
+    onBlur: setFieldTouched,
   })
   
   return [bindField, setAllFieldsTouched]
@@ -32,10 +32,10 @@ const ContactForm = () => {
     e.target.classList.add("inputFocus");
   };
 
-  const handleBlur = e => {
-    e.target.classList.remove("inputFocus");
-  };
-
+  // const handleBlur = e => {
+  //   if(e.target.value == "")e.target.classList.remove("inputFocus");
+  // };
+  
   return (
     <div className='container'>
       <form
@@ -52,7 +52,7 @@ const ContactForm = () => {
             name="name" 
             type="text"
             onFocus={handleFocus}
-            onBlur={handleBlur}
+            // onBlur={handleBlur}
             {...bindField("name")}
             required
             />
@@ -65,7 +65,7 @@ const ContactForm = () => {
             name="email" 
             type="email" 
             onFocus={handleFocus}
-            onBlur={handleBlur}
+            // onBlur={handleBlur}
             {...bindField("email")}
             required  
           />
@@ -78,7 +78,7 @@ const ContactForm = () => {
             name="password" 
             type="password" 
             onFocus={handleFocus}
-            onBlur={handleBlur}
+            // onBlur={handleBlur}
             {...bindField("password")}
             required  
           />
@@ -91,7 +91,7 @@ const ContactForm = () => {
             name="tel" 
             type="tel"          
             onFocus={handleFocus}
-            onBlur={handleBlur}     
+            // onBlur={handleBlur}     
             {...bindField("tel")}
             required 
           />
