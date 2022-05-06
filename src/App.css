@@ -1,154 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding-top: 2rem;
-    padding-bottom: 5rem
+body {
+  margin: 0;
+  font-family: 'GothamLight', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-    padding-bottom: 3rem
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.dot_page{
+  height:5px;
+  width: 5px;
+  border-radius: 999px;
+  background-color: black;
+  display: block;
+  margin:0px 3px;
+  cursor: pointer;
+}
+.dot_wrapper{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
 }
 
-fieldset {
-    border: none;
-    margin: 2.5rem 0;
-    padding: 0
+.MuiGrid-root .css-k83ing-MuiTypography-root {
+  color: #ff0000;
 }
 
-fieldset:first-child {
-    margin-top: 0
-}
-
-fieldset:last-child {
-    margin-bottom: 0
-}
-
-.text-input {
-    position: relative;
-    margin-bottom: 1rem;
-}
-
-/* label {
-    display: block;
-    font-size: 1.2rem;
-    color: #4b5563
-} */
-
-.text-input label {
-    position: absolute;
-    top: 14%;
-    left: 0.5rem;
-    padding: 0 0.5rem;
-    pointer-events: none;
-    transition: 150ms ease;
-    color: #888;
-}
-
-.text-input input + label {
-    position: absolute;
-    top: 14%;
-    left: 0.5rem;
-    padding: 0 0.5rem;
-    pointer-events: none;
-    transition: 150ms ease;
-    color: #888;
-}
-
-/* .text-input input:focus + label {
-    transform: translateY(-1.3rem);
-    background-color: #fff;
-    font-size: 0.9rem;
-    padding: 0 0.3rem;
-    color: #f00;
-} */
-
-.text-input input:focus {
-    outline: none;
-}
-
-/* .text-input input:valid + label {
-    transform: translateY(-1.3rem);
-    background-color: #fff;
-    font-size: 0.9rem;
-    padding: 0 0.3rem;
-    color: #f00;
-} */
-
-.text-input input.inputFocus + label {
-    position: absolute;
-    top: 0;
-    font-size: 0.9em;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    transform: translateY(-50%);
-    background-color: #fff;
-    font-weight: 600;
+.Mui-required:after {
+  content: "*";
+  color: red;
+  position: absolute;
+  right: 0;
 }
 
 
-[multiple],
-[type=date],
-[type=datetime-local],
-[type=email],
-[type=month],
-[type=number],
-[type=password],
-[type=search],
-[type=tel],
-[type=text],
-[type=time],
-[type=url],
-[type=week],
-select,
-textarea {
-    display: block;
-    width: 100%;
-    appearance: none;
-    background-color: #fff;
-    border-color: #6b7280;
-    border-width: 1px;
-    border-radius: 0;
-    padding-top: .5rem;
-    padding-right: .75rem;
-    padding-bottom: .5rem;
-    padding-left: .75rem;
-    font-size: 1rem;
-    line-height: 1.5rem
+@font-face {
+  font-family: GothamBook;
+  src: url(../src/fonts/GothamBook.ttf);
 }
 
-button[type=submit] {
-    background: #3b82f6;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.3rem;
-    border: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem
+
+@font-face {
+  font-family: GothamLight;
+  src: url(../src/fonts/GothamLight.ttf);
 }
 
-button[type=submit]:hover {
-    background: #0a59da
+@font-face {
+  font-family: GothamBold;
+  src: url(../src/fonts/GothamBold.ttf);
 }
 
-.form-required-message {
-    visibility: hidden
-}
-
-input[data-touched="true"]:invalid,
-textarea[data-touched="true"]:invalid {
-    border: 1px solid #f44336
-}
-
-input[data-touched="true"]:invalid + label {
-    color: #f44336
-}
-
-input[data-touched="true"]:invalid~.form-required-message,
-textarea[data-touched="true"]:invalid~.form-required-message {
-    color: #f44336;
-    padding-top: 0.5rem;
-    visibility: visible
+@font-face {
+  font-family: GothamMedium;
+  src: url(../src/fonts/GothamMedium_1.ttf);
 }
