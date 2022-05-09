@@ -1,18 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import LoginForm from './Pages/LoginForm';
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// @import pages
+const Register = React.lazy(() => import("./pages/auth/register"));
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<LoginForm />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <>
+      <Suspense fallback={<></>}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Register />}></Route>
+          </Routes>
+        </Router>
+      </Suspense>
+    </>
   );
-}
+};
 
 export default App;
