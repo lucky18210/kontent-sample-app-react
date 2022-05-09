@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// @import components
 import Input from "../../components/Input";
-
 import { minMaxLength, validEmail } from "../../utils/valid";
-// @import styles
+
 import {
   Link,
   NextAction,

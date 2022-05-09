@@ -4,29 +4,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { InputContainer, InputVaild } from "./input.styled";
 
 const Input = (props) => {
-
-  // const [enterdGoal, setEnterdGoal] = useState('');
-  // const [isValid, setIsValid] = useState(true);
-
-  // const goalTextHandler = (event) => {
-  //     if (enterdGoal.trim().length > 0) {
-  //         setIsValid(true);
-  //     }
-  //     setEnterdGoal(event.target.value);
-  // }
-
-  // const formChangeHandler = (event) => {
-  //     event.preventDefault();
-  //     if (enterdGoal.trim().length === 0) {
-  //         setIsValid(false);
-  //         return;
-  //     }
-  //     let formData = {
-  //         goalName: enterdGoal,
-  //     }
-  //     onAddNewGoalHandler(formData);
-  // }
-  
   const handleFocus = e => {
     e.target.classList.add("inputFocus");
   }
@@ -34,7 +11,6 @@ const Input = (props) => {
   const handleBlur = e => {
     if(e.target.value === "") e.target.classList.remove("inputFocus");
   }
-  // console.log(props.onChange, props.error);
 
   return (
     <>
@@ -43,7 +19,6 @@ const Input = (props) => {
           <input
             type={props.show ? "text" : props.type}
             name={props.name}
-            // placeholder={props.placeholder}
             value={props.value}
             onFocus={handleFocus}
             onBlur={handleBlur}
@@ -60,7 +35,6 @@ const Input = (props) => {
         )}
       </InputContainer>
       {props.type !== "password" && props.error && <InputVaild>{props.error}</InputVaild>}
-      {/* {props.type === "password" && !props.value && <InputVaild><p style={{color: props.error ? 'red' : '#585858', margin: 0}}>Minimum 8 characters</p></InputVaild>} */}
       {props.type === "password" && (!props.value ? <InputVaild><p style={{color: props.error ? 'red' : '#585858', margin: 0}}>Minimum 8 characters</p></InputVaild> : props.error && <InputVaild><p style={{color: 'red', margin: 0}}>Minimum 8 characters</p></InputVaild>)}
     </>
   );

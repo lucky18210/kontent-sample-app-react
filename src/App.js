@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// @import pages
+
 const Register = React.lazy(() => import("./pages/auth/register"));
 
 const App = () => {

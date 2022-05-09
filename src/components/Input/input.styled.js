@@ -37,32 +37,6 @@ export const InputContainer = styled.div`
       z-index: 10;
       transition: 220ms ease;
     }
-    // input[data-touched="true"]:invalid~ {
-    //   border: 1px solid rgba(0, 0, 0, 0.1);
-    // }
-    // & > input[data-touched="true"]:valid {
-    //   border: 1px solid red;
-    // }
-    // & > input.inputFocus:valid {
-    //   // border: 1px solid ${(props) => (props.hasError ? "red" : "rgba(0, 0, 0, 0.1)")};
-    //   border: 1px solid red;
-    // }
-    // & > input.inputFocus:invalid {
-    //   // border: 1px solid ${(props) => (props.hasError ? "red" : "rgba(0, 0, 0, 0.1)")};
-    //   border: 1px solid rgba(0, 0, 0, 0.1);
-    // }
-    // & > input.inputFocus:not(:valid) {
-    //   border: 1px solid rgba(0, 0, 0, 0.1)!important;
-    // }
-    // & > input.inputFocus:invalid + label {
-    //   color: red;
-    // }
-    // & > input.inputFocus:valid {
-    //   border: 1px solid rgba(0, 0, 0, 0.1);
-    // }
-    // & > input.inputFocus:valid + label {
-    //   color: black;
-    // }
   }
   & > div {
     position: absolute;
