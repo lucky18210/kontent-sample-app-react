@@ -1,41 +1,58 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "@kentico/kontent-sample-app-react",
+  "version": "2.0.0",
   "private": true,
+  "devDependencies": {
+    "cpy-cli": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "dateformat": "^3.0.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.0.5",
+    "react-scripts": "^5.0.0"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-icons": "^4.3.1",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "@kentico/kontent-delivery": "11.7.0",
+    "@simply007org/kontent-react-components": "0.0.6",
+    "@simply007org/react-spinners": "0.0.3",
+    "google-maps-react": "^2.0.6",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
+    "qs": "^6.9.4",
+    "react": "^18.0.0",
+    "react-cookie": "^4.1.1",
+    "react-dom": "^18.0.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scroll": "^1.7.16",
+    "react-translate": "^7.0.1",
+    "universal-cookie": "^4.0.3",
+    "validator": "^13.1.1"
+  },
+  "lint-staged": {
+    "{src,examples}/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "cross-env CI=true react-scripts build && cpy build/index.html build --rename=200.html",
+    "test-watch": "react-scripts test --env=jsdom",
+    "test": "cross-env CI=true react-scripts test --env=jsdom --passWithNoTests"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "engines": {
+    "npm": "7 || 8",
+    "node": "16 || 17"
   }
 }

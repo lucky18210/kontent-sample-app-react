@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Kontent sample React single-page application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5018e8db-b76e-4f19-8ad2-7fd9da21a2ee/deploy-status)](https://app.netlify.com/sites/kontent-sample-app-react/deploys)
+[![Live Demo](https://img.shields.io/badge/live-demo-brightgreen.svg)](https://kontent-sample-app-react.netlify.app/)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
-## Available Scripts
+This is a sample website written in JavaScript utilizing the Kontent Delivery API to manage and retrieve content from Kontent by Kentico. You can register your account for free at <https://app.kontent.ai>. For a brief walkthrough, check out [Running the React sample app](https://kontent.ai/learn/tutorials/develop-apps/get-started/run-the-react-sample-app) at Kontent Learn.
 
-In the project directory, you can run:
+## Application setup
 
-### `npm start`
+1. Install the latest version of NodeJS and npm. You can download both at <https://nodejs.org/en/download/>.
+2. Clone the sample application repository.
+3. Navigate to the root folder of the application in the command line.
+4. Type `npm install` to install required npm packages.
+5. Type `npm start` to start a development server.
+6. The application opens in your browser at <http://localhost:3000>.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After starting, the sample application retrieves content from the **default** Kontent sample project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Connecting to your sample project
 
-### `npm test`
+At the first run of the app, you'll be presented with a configuration page. It will allow you to connect the app to your Kontent project or create a new one. You'll also be able to start a trial and convert to a free plan when the trial expires.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Alternatively, you can connect your project manually as per the chapter below.
 
-### `npm run build`
+#### Connecting to your project manually
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to change the source Kontent project, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. In Kontent, choose Project settings from the app menu.
+2. Under Development, choose API keys.
+3. Copy your Project ID.
+4. Open `.env.example` in the root directory.
+5. Replace `your_project_id` with your Project ID and remove `REACT_APP_PREVIEW_API_KEY` entry.
+6. Save and rename the file `.env`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When you now run the sample application, the application retrieves content from your project.
 
-### `npm run eject`
+## Get creative
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Deploy, explore and change the app directly in the browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/Kentico/kontent-sample-app-react)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Kentico/kontent-sample-app-react)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Previewing content from your project
 
-## Learn More
+If you already have a Kontent account and you want to connect the sample application to a project of your own, you need to provide your Project ID and your Preview API key to authorize requests to the Delivery Preview API. For example, you can connect the application to your modified version of the sample project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To preview content in the sample application, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. In Kontent, choose Project settings from the app menu.
+2. Under Development, choose API keys.
+3. Copy your Project ID and Preview API key.
+4. Open `.env.example` in the root directory .
+5. Replace `your_project_id` and `your_api_key` with your Project ID and Preview API key.
+6. Save and rename the file `.env`.
 
-### Code Splitting
+When you now run the application, you will see all project content including the unpublished version of content items.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Content administration
 
-### Analyzing the Bundle Size
+1. Navigate to <https://app.kontent.ai> in your browser.
+2. Sign in with your credentials.
+3. Manage content in the content administration interface of your sample project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can learn more about content editing in our tutorials at [Kontent Learn](https://kontent.ai/learn/tutorials/write-and-collaborate/create-content/introducing-content-items).
 
-### Making a Progressive Web App
+## Content delivery
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You can retrieve content either through the Kontent Delivery SDKs or the Kontent Delivery API:
 
-### Advanced Configuration
+- For published content, use `https://deliver.kontent.ai/PROJECT_ID/items`.
+- For unpublished content, use `https://preview-deliver.kontent.ai/PROJECT_ID/items`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+For more info about the API, see the [API reference](https://kontent.ai/learn/reference).
 
-### Deployment
+You can find the Delivery and other SDKs at <https://github.com/Kentico>.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Deployment
 
-### `npm run build` fails to minify
+You can use eg. [surge](http://surge.sh/) to deploy your app live. Check out the step-by-step guide on our [blog](https://kontent.ai/blog/3-steps-to-rapidly-deploy-headless-single-page-app).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Wall of Fame
+
+We would like to express our thanks to the following people who contributed and made the project possible:
+
+- [Bee Martinez](https://github.com/beemtz)
+
+Would you like to become a hero too? Pick an [issue](https://github.com/Kentico/kontent-sample-app-react/issues) and send us a pull request!
+
